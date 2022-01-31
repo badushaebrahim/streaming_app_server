@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 40px auto;
+        max-width: 650px;
+        line-height: 1.6;
+        font-size: 18px;
+        font-family: "Courier New", Courier, monospace;
+        color: #444;
+        padding: 0 10px;
+      }
+      h2 {
+        line-height: 1.2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input type="text"id="folder">
+    <input type="text"id="filename">
+    <input type="button" onclick="go()" value="gogo">
+    <h2>HTTP Video Streaming</h2>
+    <p>This video is 61MB and is being streamed instead of downloaded.</p>
+    <p>
+      Feel free to seek through the video and it only loads the part you want to
+      watch
+    </p>
+    <video id="videoPlayer" width="650" controls muted="muted" autoplay>
+      
+    </video>
+    <i>Big Buck Bunny</i>
+  </body>
+</html>
+<script>
+  function go(){
+  var folder= document.getElementById("folder").value;
+  var file=document.getElementById("filename").value;
+  //var go = document.getElementById("videoPlayer");
+  var video = document.getElementById('videoPlayer');
+//var source = document.getElementById('source');
+var ma="/video/"+folder+"/"+file
+video.setAttribute('src', ma);
+console.log(video)
+  
+  console.log(ma);
+  }
+</script>
